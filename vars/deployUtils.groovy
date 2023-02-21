@@ -23,8 +23,8 @@ def getDeploymentConfigs (deployParams, portfolio, env, projectName ) {
     // Update with Portfolio defaults
     deployParams.each {key, value -> 
         if (defaultEnvProps[key] != null) {
-            echo "Overriding parameter '$key' with Porfolio Default: $value"
-            deployParams[key] = value
+            echo "Overriding parameter '$key' with Porfolio Default: " + defaultEnvProps[key]
+            deployParams[key] = defaultEnvProps[key]
         }
     }
 
@@ -33,8 +33,8 @@ def getDeploymentConfigs (deployParams, portfolio, env, projectName ) {
     // Update with Project values
     deployParams.each {key, value -> 
         if (envProps[key] != null) {
-            echo "Overriding parameter '$key' with Project value: $value"
-            deployParams[key] = value
+            echo "Overriding parameter '$key' with Project value: " + envProps[key]
+            deployParams[key] = envProps[key]
         }
     }   
 
