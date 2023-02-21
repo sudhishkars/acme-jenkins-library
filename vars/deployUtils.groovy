@@ -44,9 +44,9 @@ def getDeploymentConfigs (deployParams, portfolio, env, projectName ) {
 
     println "deployParams 3: " + deployParams
 
-    deployParams.each {key, value -> 
-        env[key.toUpperCase()] = value
-    }
+    // deployParams.each {key, value -> 
+    //     env[key.toUpperCase()] = value
+    // }
 
-    println "Env: ${env}"
+    // println "Env: ${env}"
 }
