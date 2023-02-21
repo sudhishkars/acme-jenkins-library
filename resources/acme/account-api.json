@@ -1,0 +1,13 @@
+{
+    "dev1": {
+        "clusters": [
+            "os-rtf-1"
+        ],
+        "replicas": 2,
+        "cpu_reserved": "50m",
+        "cpu_limit": "200m",
+        "memory_reserved": "1200Mi",
+        "clustered": "false",
+        "mule_version": "4.4.0"
+    }
+}

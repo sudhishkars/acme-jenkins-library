@@ -1,0 +1,11 @@
+{
+    "dev1": {
+        "clusters": [
+            "os-rtf-1"
+        ],
+        "replicas": 1,
+        "cpu_reserved": "20m",
+        "cpu_limit": "200m",
+        "memory_reserved": "700Mi"
+    }
+}
