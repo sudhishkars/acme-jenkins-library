@@ -3,10 +3,14 @@ import groovy.transform.Field
 def getDeploymentConfigs (deployParams, portfolio, env, projectName ) {
     println "portfolio: " + portfolio + ", env: " + env + ", project: " + projectName
 
-    def props = readJSON file: "${portfolio}/${projectName}.json"
+    def propsString = libraryResource "${portfolio}/${projectName}.json"
+    println "Props Str: " + $propsString
+    def props = readJSON text: $propsString
     println "Props: " + props
 
-    def defaultProps = readJSON file: "${portfolio}/defaultConfigs.json"
+    def defaultPropsString = libraryResource "${portfolio}/defaultConfigs.json"
+    println "D Props Str: " + $defaultPropsString
+    def defaultProps = readJSON text: $defaultPropsString
     println "D Props: " + defaultProps
 
     def defaultEnvProps = defaultProps[env]
