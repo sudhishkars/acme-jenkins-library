@@ -1,10 +1,20 @@
 import groovy.transform.Field
 
 def getDeploymentConfigs (deployParams, portfolio, env, projectName ) {
-    def props = readJSON file: '$portfolio/$projectName.json'
-    def defaultProps = readJSON file: '$portfolio/defaultConfigs.json'
+    println "portfolio: " + portfolio + ", env: " + env + ", project: " + projectName
+
+    def props = readJSON file: "${portfolio}/${projectName}.json"
+    println "Props: " + props
+
+    def defaultProps = readJSON file: "${portfolio}/defaultConfigs.json"
+    println "D Props: " + defaultProps
+
     def defaultEnvProps = defaultProps[env]
+    println "D Env Props: " + defaultEnvProps
+
     def envProps = props[env]
+    println "Env Props: " + envProps
+
 
     // Update with Portfolio defaults
     deployParams.each {key, value -> 
@@ -28,5 +38,5 @@ def getDeploymentConfigs (deployParams, portfolio, env, projectName ) {
         env[key.toUpperCase()] = value
     }
 
-    echo "Env: $env"
+    println "Env: ${env}"
 }
