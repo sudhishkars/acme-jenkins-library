@@ -28,15 +28,21 @@ def getDeploymentConfigs (deployParams, portfolio, env, projectName ) {
         }
     }
 
+    println "deployParams 1: " + deployParams
+
     // Update with Project values
     deployParams.each {key, value -> 
         if (envProps[key] != null) {
             echo "Overriding parameter '$key' with Project value: $value"
             deployParams[key] = value
         }
-    }    
+    }   
 
-    deployParams << mwDefaults.deployConstants
+    println "deployParams 2: " + deployParams 
+
+    deployParams << mwDefaults.deployment_Params_Constants
+
+    println "deployParams 3: " + deployParams
 
     deployParams.each {key, value -> 
         env[key.toUpperCase()] = value
