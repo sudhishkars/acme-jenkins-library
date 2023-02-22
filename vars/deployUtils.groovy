@@ -47,7 +47,7 @@ def getDeploymentConfigs (deployParams, portfolio, env, projectName ) {
 
     println "deployParams 2: " + deployParams 
 
-    deployParams << mwDefaults.deployment_Params_Constants
+    deployParams << mwDefaults.deployment_params_constants
 
     println "deployParams 3: " + deployParams
 }
