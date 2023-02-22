@@ -40,10 +40,10 @@ def getDeploymentProile (deployProfile, portfolio, projectName) {
 def getDeploymentConfigs (deployParams, portfolio, env, projectName ) {
     println "portfolio: " + portfolio + ", env: " + env + ", project: " + projectName
 
-    updateDeploymentConfigs (deployParams, "${portfolio}/defaultConfigs.json",  env)
+    retrieveDeployConfigsFromFile (deployParams, "${portfolio}/defaultConfigs.json",  env)
     println "deployParams 1: " + deployParams
 
-    updateDeploymentConfigs (deployParams, "${portfolio}/${projectName}1.json",  env)
+    retrieveDeployConfigsFromFile (deployParams, "${portfolio}/${projectName}1.json",  env)
 
     println "deployParams 2: " + deployParams 
 
