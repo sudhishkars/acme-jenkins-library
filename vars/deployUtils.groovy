@@ -1,6 +1,6 @@
 import groovy.transform.Field
 
-def updateDeploymentConfigs (deployParams, filepath, env) {
+def retrieveDeployConfigsFromFile (deployParams, filepath, env) {
 
     println "File Path: " + filepath
     try {
@@ -23,6 +23,14 @@ def updateDeploymentConfigs (deployParams, filepath, env) {
         echo "Error Occurred: " + e.toString();
     }
 
+}
+
+def getDeploymentProile (deployProfile, portfolio, projectName) {
+    def propsString = libraryResource "${portfolio}/${projectName}1.json"
+    def props = readJSON text: propsString
+    if (props['deploy_profile'] != null) {
+        deploy_profile = props['deploy_profile']
+    }
 }
 
 def getDeploymentConfigs (deployParams, portfolio, env, projectName ) {

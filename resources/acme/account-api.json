@@ -1,4 +1,5 @@
 {
+    "deploy_profile": "rtf",
     "dev1": {
         "clusters": [
             "os-rtf-1"
