@@ -26,10 +26,14 @@ def retrieveDeployConfigsFromFile (deployParams, filepath, env) {
 }
 
 def getDeploymentProile (deployProfile, portfolio, projectName) {
-    def propsString = libraryResource "${portfolio}/${projectName}1.json"
-    def props = readJSON text: propsString
-    if (props['deploy_profile'] != null) {
-        deploy_profile = props['deploy_profile']
+    try {
+        def propsString = libraryResource "${portfolio}/${projectName}1.json"
+        def props = readJSON text: propsString
+        if (props['deploy_profile'] != null) {
+            deploy_profile = props['deploy_profile']
+        }
+    } catch (Exception e) {
+        echo "Error Occurred: " + e.toString();
     }
 }
 
