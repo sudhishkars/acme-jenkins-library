@@ -6,6 +6,7 @@
         "replicas": 1,
         "cpu_reserved": "20m",
         "cpu_limit": "200m",
-        "memory_reserved": "700Mi"
+        "memory_reserved": "700Mi",
+        "deploy_profile": "rtf"
     }
 }
