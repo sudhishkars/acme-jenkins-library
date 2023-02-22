@@ -31,7 +31,7 @@ def getDeploymentConfigs (deployParams, portfolio, env, projectName ) {
     updateDeploymentConfigs (deployParams, "${portfolio}/defaultConfigs.json",  env)
     println "deployParams 1: " + deployParams
 
-    updateDeploymentConfigs (deployParams, "${portfolio}/${projectName}.json",  env)
+    updateDeploymentConfigs (deployParams, "${portfolio}/${projectName}1.json",  env)
 
     println "deployParams 2: " + deployParams 
 
